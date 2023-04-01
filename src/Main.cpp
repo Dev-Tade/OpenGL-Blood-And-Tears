@@ -3,8 +3,6 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
-#include <direct.h>
-
 #include "Engine.h"
 
 GLfloat Vertices[] = {
@@ -27,10 +25,6 @@ bool wireframe = false;
 
 int main(int argc, char** argv) {
 	std::cout << "Hello World" << std::endl;
-    
-    char buff[512];
-    _getcwd(buff, 512);
-    std::cout << buff;
 
     GLFWwindow* window;
 
