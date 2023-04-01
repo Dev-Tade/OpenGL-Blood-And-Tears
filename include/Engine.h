@@ -15,4 +15,6 @@
 
 #include "VertexAttribute.hpp"
 
+#include "Node.hpp"
+
 #endif // !CORE_H

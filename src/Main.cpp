@@ -1,10 +1,13 @@
 #include <iostream>
+#include <vector>
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
 #include "Engine.h"
+#include "Quad.hpp"
 
+/*
 GLfloat Vertices[] = {
     // positions          // colors           // texture coords
      0.5f, 0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   //1.0f, 1.0f,   // top right
@@ -14,6 +17,20 @@ GLfloat Vertices[] = {
 };
 
 GLuint Indices[] = {
+    0, 1, 3,
+    1, 2, 3,
+};
+*/
+
+std::vector<GLfloat> vertices = {
+    // positions          // colors           // texture coords
+     0.5f, 0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   //1.0f, 1.0f,   // top right
+     0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   //1.0f, 0.0f,   // bottom right
+    -0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,   //0.0f, 0.0f,   // bottom left
+    -0.5f, 0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   //0.0f, 1.0f    // top left 
+};
+
+std::vector<GLuint> indices = {
     0, 1, 3,
     1, 2, 3,
 };
@@ -64,6 +81,7 @@ int main(int argc, char** argv) {
 
     Shader shader(vertex, fragment);
     
+    /*
     VertexArrayObject VAO;
     VertexBufferObject VBO;
     ElementBufferObject EBO;
@@ -83,6 +101,9 @@ int main(int argc, char** argv) {
 
     VBO.Unbind();
     VAO.Unbind();
+    */
+    
+    Quad testq(vertices, indices);
 
     shader.Activate();
 
@@ -116,8 +137,11 @@ int main(int argc, char** argv) {
         
         shader.Activate();
 
+        testq.Draw();
+        /*
         VAO.Bind();
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+        */
         
         frames++;
 
@@ -135,11 +159,14 @@ int main(int argc, char** argv) {
         }
     }
 
+    /*
     VAO.Delete();
     VBO.Delete();
     EBO.Delete();
+    */
+    testq.Delete();
 
-    //shader.Delete();
+    shader.Delete();
 
     glfwTerminate();
     return 0;
