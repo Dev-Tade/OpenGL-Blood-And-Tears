@@ -1,5 +1,5 @@
-#ifndef VERTEX_ATTRIBUTE_H
-#define VERTEX_ATTRIBUTE_H
+#ifndef VERTEX_ATTRIBUTE_HPP
+#define VERTEX_ATTRIBUTE_HPP
 
 #include <glad/glad.h>
 

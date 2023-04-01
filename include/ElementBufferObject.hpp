@@ -1,5 +1,5 @@
-#ifndef EBO_H
-#define EBO_H
+#ifndef EBO_HPP
+#define EBO_HPP
 
 #include <glad/glad.h>
 

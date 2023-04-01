@@ -1,5 +1,5 @@
-#ifndef FRAGMENT_SHADER_H
-#define FRAGMENT_SHADER_H
+#ifndef FRAGMENT_SHADER_HPP
+#define FRAGMENT_SHADER_HPP
 
 #include <glad/glad.h>
 

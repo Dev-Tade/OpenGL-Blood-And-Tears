@@ -1,5 +1,5 @@
-#ifndef VERTEX_SHADER_H
-#define VERTEX_SHADER_H
+#ifndef VERTEX_SHADER_HPP
+#define VERTEX_SHADER_HPP
 
 #include <glad/glad.h>
 

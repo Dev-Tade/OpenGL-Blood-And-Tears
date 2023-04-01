@@ -3,16 +3,16 @@
 
 #include <glad/glad.h>
 
-#include "Auxiliary.h"
+#include "Auxiliary.hpp"
 
-#include "VertexArrayObject.h"
-#include "VertexBufferObject.h"
-#include "ElementBufferObject.h"
+#include "VertexArrayObject.hpp"
+#include "VertexBufferObject.hpp"
+#include "ElementBufferObject.hpp"
 
-#include "VertexShader.h"
-#include "FragmentShader.h"
-#include "Shader.h"
+#include "VertexShader.hpp"
+#include "FragmentShader.hpp"
+#include "Shader.hpp"
 
-#include "VertexAttribute.h"
+#include "VertexAttribute.hpp"
 
 #endif // !CORE_H

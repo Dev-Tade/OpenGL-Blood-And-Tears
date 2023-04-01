@@ -1,9 +1,9 @@
-#ifndef SHADER_H
-#define SHADER_H
+#ifndef SHADER_HPP
+#define SHADER_HPP
 
 #include <glad/glad.h>
-#include "VertexShader.h"
-#include "FragmentShader.h"
+#include "VertexShader.hpp"
+#include "FragmentShader.hpp"
 
 class Shader {
 	private:

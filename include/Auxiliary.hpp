@@ -1,5 +1,5 @@
-#ifndef AUX_H
-#define AUX_H
+#ifndef AUX_HPP
+#define AUX_HPP
 
 #include <string>
 using std::string;
