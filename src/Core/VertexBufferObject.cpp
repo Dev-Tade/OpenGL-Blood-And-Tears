@@ -1,4 +1,4 @@
-#include "VertexBufferObject.h"
+#include "VertexBufferObject.hpp"
 
 VertexBufferObject::VertexBufferObject() {
 	glGenBuffers(1, &ID);

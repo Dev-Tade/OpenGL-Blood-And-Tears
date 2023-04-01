@@ -1,4 +1,4 @@
-#include "VertexAttribute.h"
+#include "VertexAttribute.hpp"
 
 VertexAttribute::VertexAttribute(GLboolean normalize, GLuint index, GLint size, GLsizei stride, GLuint start) {
 	__idx = index;

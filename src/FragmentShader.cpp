@@ -1,5 +1,5 @@
 #include <iostream>
-#include "FragmentShader.h"
+#include "FragmentShader.hpp"
 
 FragmentShader::FragmentShader(const char* fragmentShaderCode) {
     shader = glCreateShader(GL_FRAGMENT_SHADER);

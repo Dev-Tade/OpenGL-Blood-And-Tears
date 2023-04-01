@@ -1,4 +1,4 @@
-#include "VertexArrayObject.h"
+#include "VertexArrayObject.hpp"
 
 VertexArrayObject::VertexArrayObject() {
 	glGenVertexArrays(1, &ID);

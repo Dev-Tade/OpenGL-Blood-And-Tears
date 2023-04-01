@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Shader.h"
+#include "Shader.hpp"
 
 Shader::Shader(VertexShader vertex, FragmentShader fragment) {
     shader = glCreateProgram();

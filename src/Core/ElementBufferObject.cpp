@@ -1,4 +1,4 @@
-#include "ElementBufferObject.h"
+#include "ElementBufferObject.hpp"
 
 ElementBufferObject::ElementBufferObject() {
 	glGenBuffers(1, &ID);

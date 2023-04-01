@@ -1,5 +1,5 @@
 #include <iostream>
-#include "VertexShader.h"
+#include "VertexShader.hpp"
 
 VertexShader::VertexShader(const char* vertexShaderCode) {
 	shader = glCreateShader(GL_VERTEX_SHADER);

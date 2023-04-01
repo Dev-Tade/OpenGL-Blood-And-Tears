@@ -64,7 +64,6 @@ int main(int argc, char** argv) {
 
     Shader shader(vertex, fragment);
     
-    
     VertexArrayObject VAO;
     VertexBufferObject VBO;
     ElementBufferObject EBO;
@@ -87,11 +86,25 @@ int main(int argc, char** argv) {
 
     shader.Activate();
 
+    static double frameRateLimit = 1.0 / 60.0;
+    double lastTime = glfwGetTime(), timer = lastTime;
+    double deltaTime = 0, nowTime = 0;
+    int frames = 0, updates = 0;
+
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))
     {
-        inputCallback(window);
+        nowTime = glfwGetTime();
+        deltaTime += (nowTime - lastTime) / frameRateLimit;
+        lastTime = nowTime;
 
+        while (deltaTime >= 1.0) {
+            inputCallback(window);
+
+            updates++;
+            deltaTime--;
+        }
+        
         if (wireframe)
             glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
         else
@@ -101,16 +114,25 @@ int main(int argc, char** argv) {
         glClear(GL_COLOR_BUFFER_BIT);
 
         
-        //shader.Activate();
+        shader.Activate();
 
         VAO.Bind();
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+        
+        frames++;
 
         /* Swap front and back buffers */
         glfwSwapBuffers(window);
 
         /* Poll for and process events */
         glfwPollEvents();
+        
+        // - Reset after one second
+        if (glfwGetTime() - timer > 1.0) {
+            timer++;
+            std::cout << "FPS: " << frames << " Updates:" << updates << std::endl;
+            updates = 0, frames = 0;
+        }
     }
 
     VAO.Delete();
